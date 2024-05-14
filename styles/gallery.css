@@ -214,7 +214,10 @@ a.site-name {
     display: grid;
 
     /* create 3  columns 300 px wide each (18.75rem) */
-    grid-template-columns: 18.75rem 18.75rem 18.75rem;
+    /* grid-template-columns: 18.75rem 18.75rem 18.75rem; */
+
+    /* create 3 columns of equal width to fill the grid container: ; */
+    grid-template-columns: 1fr 1fr 1fr;
 
     /* Below is how you create 2 rows, 200px  height each 200px: */
     /* grid-template-rows: 12.5rem 12.5rem; */
