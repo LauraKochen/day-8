@@ -220,7 +220,10 @@ a.site-name {
     /* grid-template-columns: 1fr 1fr 1fr; */
 
     /* Create 3 columns, the first 2 are 300px, the last one will fille the remaining space: .; */
-    grid-template-columns: repeat(2, 18.75rem) 1fr;
+    /* grid-template-columns: repeat(2, 18.75rem) 1fr; */
+
+    /* Create  3 columns first the two are 300px the last one is minimum 300px and max the remaining space. This is the min-max function. */
+    grid-template-columns: repeat(2, 18.75rem) minmax(18.75rem, 1fr);
 
     /* Below is how you create 2 rows, 200px  height each 200px: */
     /* grid-template-rows: 12.5rem 12.5rem; */
