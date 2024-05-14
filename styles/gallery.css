@@ -93,20 +93,43 @@ a:active {
 --------------------------------------------------------------*/
 @media screen and (min-width: 68em) {
   .site-wrapper {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 53rem) minmax(auto, 22rem) 1fr;
+    grid-template-areas:
+      "header header header header"
+      ". main sidebar ."
+      "footer footer footer footer";
+    /* this is creating a grid with 4 columns for the site */
   }
 
+  .side-wrapper.sidebar-left {
+    grid-template-columns: 1fr minmax(auto, 22rem) minmax(auto, 53rem) 1fr;
+  }
+
+  /* for moving the sidebar to the other side
+	grid-template-areas:
+	"header header header header"
+	". sidebar main ."
+	"footer footer footer footer" */
+
+  /* below is assigning the sections */
   .site-header {
+    grid-area: header;
   }
 
   .site-main {
+    grid-area: main;
   }
 
   .site-sidebar {
+    grid-area: sidebar;
   }
 
   .site-footer {
+    grid-area: footer;
   }
-}
+
+
 
 /*--------------------------------------------------------------
 # Components
@@ -180,9 +203,12 @@ a.site-name {
   }
 
   .site-header {
+	display: grid;
+	grid-template-columns: 1fr mixmax(auto, 22rem) minmax(auto 53rem) 1fr;
   }
 
   .site-name {
+	grid-column: 2 / 3;
   }
 
   .site-navigation {
@@ -205,7 +231,7 @@ a.site-name {
 /* Main
 --------------------------------------------- */
 .site-main {
-  padding: 0 5rem;
+  /* padding: 0 5rem; */
 }
 
 @media (min-width: 68em) {
@@ -243,7 +269,14 @@ a.site-name {
     /* creating space between the images, ie gap */
     gap: 1rem;
 
+    /* to center your content ithin a grid */
     justify-content: center;
+
+    /* THese two are the default values for alignment and justifications */
+    align-items: stretch;
+    justify-items: stretch;
+
+    /* to justify just one image in their box, it is justify align-self */
   }
 
   .photo-gallery img {
